@@ -4,7 +4,7 @@ set -e
 
 if [ ! $(which javac) ]; then
 	echo "No Java Installed."
-	exit -1
+	exit 127
 fi
 
 readonly TEST_CLASS_NAME='ChinaMobilePhoneNumberRegexesTest.java'
@@ -21,5 +21,5 @@ elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
 	${JAVA_PATH} -cp .;${JUNIT_PATH};${HAMCREST_PATH} "org.junit.runner.JUnitCore" ${TEST_CLASS_NAME}
 else
 	echo "Unsupported OS."
-	exit -1
+	exit 1
 fi

@@ -6,7 +6,7 @@ PYTHON_PATH=$(which python)
 
 if [ ! ${PYTHON_PATH} ]; then
 	echo "No Python Installed."
-	exit -1
+	exit 127
 fi
 
 ${PYTHON_PATH} test.py

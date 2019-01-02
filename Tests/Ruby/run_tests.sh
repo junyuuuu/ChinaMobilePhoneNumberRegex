@@ -6,7 +6,7 @@ RUBY_PATH=$(which ruby)
 
 if [ ! ${RUBY_PATH} ]; then
 	echo "No Ruby Installed."
-	exit -1
+	exit 127
 fi
 
 ${RUBY_PATH} test.rb
